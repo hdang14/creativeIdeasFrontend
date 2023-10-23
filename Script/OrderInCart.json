@@ -1,0 +1,12 @@
+ [   
+    {
+        "itemName":"Buttons",
+        "itemPrice":20.00,
+        "itemQTY":"3"
+    },
+    {
+        "itemName":"Needles",
+        "itemPrice":11.00,
+        "itemQTY":"2"
+    }
+]
