@@ -11,34 +11,13 @@
     <body>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script src="../../Script/OrderPageScripts/OrderHistory.js"></script>
-        <nav class="navbar navbar-expand-lg nav-background">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Creative Ideas</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarColor01" style="margin-top: 8px">
-                
-                <form class="d-flex">
-                    <input class="form-control me-sm-2" type="search" placeholder="Search" style="margin-left: 50px; width: 100%">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
-                  
-                <li class="nav-item dropdown" style="padding-left: 20px;">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">User</a>
-                    <div class="dropdown-menu" style="background-color: #F5F5DC;">
-                      <a class="dropdown-item" href="#">Customer Name</a>
-                      <a class="dropdown-item" href="#">View Order History</a>
-                      <a class="dropdown-item" href="#">Logout</a>
-                    </div>
-                </li>
-                <li class="nav-item" style="font-size: 24px; padding-left: 20px;">
-                    <button><i class="bi bi-cart"></i></button>
-                </li>
-              </div>
-            </div>
-          </nav>
 
+        <!-- Calls and displays navbar -->
+        <?php
+            include('Navbar.php');
+        ?>
+
+        <!-- Displays Order Items -->
         <div class ="v-align">
             <div class="card box-card order-card">
 
@@ -64,7 +43,7 @@
                     </tr>
                 </table>
             </div>
-
+        
             <div class="card box-card order-card">
                 <h3 class="align-text" id="name1"><Strong>Order 2</Strong></h3>
                 <table>

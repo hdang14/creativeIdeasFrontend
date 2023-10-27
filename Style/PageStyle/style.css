@@ -1,0 +1,120 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+header{
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button{
+    color: var(--text-color);
+}
+
+:root{
+    --bg-color: #C6F4BA;
+    --text-color: #c9c9a5;
+}
+
+form{
+    width: 50%;
+}
+
+.logo{
+    font-size: 2.2rem;
+    line-height: 0.8;
+    margin-left: 15px;
+}
+.nav-background, button{
+    background-color: var(--bg-color);
+}
+a, form, label, p{
+    font-family: "Cabin Sketch", cursive;
+}
+
+.icons{
+    display: flex;
+    margin-right: 50px;
+}
+
+.icons i{
+    font-size: 24px;
+}
+
+.icons i:hover{
+    opacity: 0.7;
+}
+
+img {
+    margin-top: 15px;
+    width: 300px;
+    height: 300px;
+  }
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, auto));
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 2rem;
+}
+
+.box{
+    background: transparent;
+    box-shadow: 5px 30px 56.1276px rgb(55 55 55 / 12%);
+    border-radius: 10px;
+    position: relative;
+    transition: all .35s ease;
+}
+
+.box h4{
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.box h5{
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.box .cart i{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 35px;
+    color: var(--text-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.box:hover{
+    transform: translateY(-5px);
+}
+
+@media (max-width: 800px){
+    #menu-icon{
+        display: block;
+    }
+    header{
+        padding: 15px 8%;
+    }
+    
+}
