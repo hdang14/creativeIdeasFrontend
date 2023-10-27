@@ -1,4 +1,4 @@
-fetch("../Script/OrderInCart.json")
+fetch("../../Script/OrderPageScripts/OrderInCart.json")
     .then(response => response.json())
     .then(data =>{
         console.log(data)
