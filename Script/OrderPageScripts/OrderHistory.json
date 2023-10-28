@@ -1,0 +1,28 @@
+[   
+    {
+        "Order1":[{
+            "itemName":"Buttons",
+            "itemPrice":20.00,
+            "itemQTY":"3",
+            "itemStatus": "Accept"
+        },
+        {
+            "itemName":"Needles",
+            "itemPrice":11.00,
+            "itemQTY":"2",
+            "itemStatus": "Accept"
+        }],
+        "Order2":[{
+            "itemName":"Markers",
+            "itemPrice":25.00,
+            "itemQTY":"2",
+            "itemStatus": "Pending"
+        },
+        {
+            "itemName":"Tape",
+            "itemPrice":3.50,
+            "itemQTY":"3",
+            "itemStatus": "Pending"
+        }]
+    }
+]
