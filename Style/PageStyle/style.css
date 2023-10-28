@@ -53,7 +53,8 @@ a, form, label, p{
 }
 
 .icons i:hover{
-    opacity: 0.7;
+    opacity: 0.6;
+
 }
 
 img {
@@ -105,16 +106,12 @@ img {
     font-size: 22px;
 }
 
+.cart:hover{
+    opacity: 0.6;
+}
+
 .box:hover{
     transform: translateY(-5px);
 }
 
-@media (max-width: 800px){
-    #menu-icon{
-        display: block;
-    }
-    header{
-        padding: 15px 8%;
-    }
-    
-}
+
