@@ -54,6 +54,7 @@ a, form, label, p{
 
 .icons i:hover{
     opacity: 0.6;
+
 }
 
 img {
@@ -112,3 +113,5 @@ img {
 .box:hover{
     transform: translateY(-5px);
 }
+
+

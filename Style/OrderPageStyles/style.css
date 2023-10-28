@@ -1,0 +1,58 @@
+nav{
+    margin:20px;
+}
+.nav-background, button{
+    background-color: #C6F4BA;
+}
+a, form, label, p{
+    font-family: "Cabin Sketch", cursive;
+}
+ul, li{
+    list-style:none;
+}
+.box-card{
+    margin-left: 0 auto;
+    padding: 20px;
+    margin-left: 20px;
+    color:  #F5F5DC;
+}
+.align-text{
+    display: inline;
+}
+.total-card{
+    position: fixed;
+    width: 250px;
+    float: right;
+    margin-right: 50px;
+    margin-top: 50px;
+
+}
+.v-align{
+    display:inline-block;
+    vertical-align: top;
+    min-width: 700px;
+    padding-top: 30px;
+}
+.order-card{
+    margin-top: 20px;
+    margin-left:50px;
+}
+table.size{
+    width: 100%;
+}
+td{
+    text-align: right;
+    font-family: "Cabin Sketch", cursive;
+}
+td.name{
+    width: 30%;
+    text-align: left;
+    font-weight: bold;
+}
+td.col-size{
+    width: 2%;
+    text-align: center;
+}
+td.label{
+    font-weight: bold;
+}
