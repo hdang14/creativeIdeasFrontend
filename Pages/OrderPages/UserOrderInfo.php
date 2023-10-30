@@ -14,7 +14,7 @@
         
         <!-- Calls and displays navbar -->
         <?php
-            include('Navbar.php');
+            include('../Component/Navbar.php');
         ?>
 
         <!-- Total Price Card -->

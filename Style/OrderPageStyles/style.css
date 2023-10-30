@@ -56,3 +56,13 @@ td.col-size{
 td.label{
     font-weight: bold;
 }
+button.order{
+    font-family: "Cabin Sketch", cursive;
+    width: 15%;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+}
+button.order:hover{
+    background-color:#F5F5DC;
+}

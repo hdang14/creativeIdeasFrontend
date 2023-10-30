@@ -14,7 +14,7 @@
 
         <!-- Calls and displays navbar -->
         <?php
-            include('Navbar.php');
+            include('../Component/Navbar.php');
         ?>
 
         <div class="card box-card total-card">
@@ -31,39 +31,9 @@
         </div>
 
         <div class ="v-align">
-            <div class="card box-card order-card">
-                <table>
-                    <tr>
-                        <td class="name"><h3 class="align-text" id="name1">Item Name</h3></td>
-                        
-                        <form action="#" class="align-text">
-                            <td class="col-size"><label for="QTY" class="align-text">QTY: </label></td>
-                            <td class="col-size"><select id="Qty1" name="qty" class="align-text"></select></td>
-                        </form>
-                        
-                    <td class="col-size"><label class="align-text">Price: </label></td>
-                    <td class="col-size"><p class="align-text" id="price1"></p></td>
-                    </tr>
-                </table>
-                <a href="#">Remove Item</a>
-            </div>
-
-            <div class="card box-card order-card">
-                <table>
-                    <tr>
-                        <td class="name"><h3 class="align-text" id="name2">Item Name</h3></td>
-                        
-                        <form action="#" class="align-text">
-                            <td class="col-size"><label for="QTY" class="align-text">QTY: </label></td>
-                            <td class="col-size"><select id="Qty2" name="qty" class="align-text"></select></td>
-                        </form>
-                        
-                    <td class="col-size"><label class="align-text">Price: </label></td>
-                    <td class="col-size"><p class="align-text" id="price2"></p></td>
-                    </tr>
-                </table>
-                <a href="#">Remove Item</a>
-            </div>
+            
+            <div id="my-table"></div>
+           
         </div>
           
 

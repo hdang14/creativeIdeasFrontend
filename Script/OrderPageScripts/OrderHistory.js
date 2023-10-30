@@ -2,25 +2,39 @@ fetch("../../Script/OrderPageScripts/OrderHistory.json")
     .then(response => response.json())
     .then(data =>{
         console.log(data)
-        document.getElementById("itemName1").innerHTML = data[0].Order1[0].itemName;
-        document.getElementById("itemQty1").innerHTML = data[0].Order1[0].itemQTY;
-        document.getElementById("itemPrice1").innerHTML = data[0].Order1[0].itemPrice;
-        document.getElementById("itemStatus1").innerHTML = data[0].Order1[0].itemStatus;
-        
-        document.getElementById("itemName2").innerHTML = data[0].Order1[1].itemName;
-        document.getElementById("itemQty2").innerHTML = data[0].Order1[1].itemQTY;
-        document.getElementById("itemPrice2").innerHTML = data[0].Order1[1].itemPrice;
-        document.getElementById("itemStatus2").innerHTML = data[0].Order1[1].itemStatus;
-
-        document.getElementById("itemName3").innerHTML = data[0].Order2[0].itemName;
-        document.getElementById("itemQty3").innerHTML = data[0].Order2[0].itemQTY;
-        document.getElementById("itemPrice3").innerHTML = data[0].Order2[0].itemPrice;
-        document.getElementById("itemStatus3").innerHTML = data[0].Order2[0].itemStatus;
-
-        document.getElementById("itemName4").innerHTML = data[0].Order2[1].itemName;
-        document.getElementById("itemQty4").innerHTML = data[0].Order2[1].itemQTY;
-        document.getElementById("itemPrice4").innerHTML = data[0].Order2[1].itemPrice;
-        document.getElementById("itemStatus4").innerHTML = data[0].Order2[1].itemStatus;
-        
+   
+        buildTable(data);
         
     })
+
+    function buildTable(data){
+        var li = document.createElement('li');
+        
+        console.log(data);
+
+        for(var i in data){
+            for(var j in data[i]){
+                for( var k in data[i][j]){
+                    var row = 
+                        `<div class="card box-card order-card">
+
+                            <h3 class="align-text"><Strong>${(j)}</Strong></h3>
+                                <table>
+                                    <tr>
+                                        <td class="name">${data[i][j][k].itemName}</td>
+                                        <td class="col-size label">QTY:</td>
+                                        <td class="col-size">${data[i][j][k].itemQTY}</td>
+                                        <td class="col-size label">Price:</td>
+                                        <td class="col-size">${data[i][j][k].itemPrice}</td>
+                                        <td class="col-size label">Status:</td>
+                                        <td class="col-size"">${data[i][j][k].itemStatus}</td>
+                                    </tr>
+                                </table>
+                        </div>`
+                            
+                    li.innerHTML += row;
+                }
+            }
+        }
+        document.getElementById("my-order").appendChild(li);
+    }
