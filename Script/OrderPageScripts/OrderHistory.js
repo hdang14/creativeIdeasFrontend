@@ -13,28 +13,27 @@ fetch("../../Script/OrderPageScripts/OrderHistory.json")
         console.log(data);
 
         for(var i in data){
-            for(var j in data[i]){
-                for( var k in data[i][j]){
+
                     var row = 
                         `<div class="card box-card order-card">
 
-                            <h3 class="align-text"><Strong>${(j)}</Strong></h3>
+                            <h3 class="align-text"><Strong>Order: ${(i)}</Strong></h3>
                                 <table>
                                     <tr>
-                                        <td class="name">${data[i][j][k].itemName}</td>
+                                        <td class="name">${data[i].itemName}</td>
                                         <td class="col-size label">QTY:</td>
-                                        <td class="col-size">${data[i][j][k].itemQTY}</td>
+                                        <td class="col-size">${data[i].qty}</td>
                                         <td class="col-size label">Price:</td>
-                                        <td class="col-size">${data[i][j][k].itemPrice}</td>
+                                        <td class="col-size">${data[i].totalPrice}</td>
                                         <td class="col-size label">Status:</td>
-                                        <td class="col-size"">${data[i][j][k].itemStatus}</td>
+                                        <td class="col-size"">${data[i].status}</td>
                                     </tr>
                                 </table>
                         </div>`
                             
                     li.innerHTML += row;
                 }
-            }
-        }
+            
+        
         document.getElementById("my-order").appendChild(li);
     }

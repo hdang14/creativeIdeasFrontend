@@ -1,28 +1,63 @@
-[   
+[
     {
-        "Order1":[{
-            "itemName":"Buttons",
-            "itemPrice":20.00,
-            "itemQTY":"3",
-            "itemStatus": "Accept"
+            "itemName": "FRAME (SMALL)",
+            "qty": 5,
+            "totalPrice": "100.25",
+            "status":"Accepted"
         },
         {
-            "itemName":"Needles",
-            "itemPrice":11.00,
-            "itemQTY":"2",
-            "itemStatus": "Accept"
-        }],
-        "Order2":[{
-            "itemName":"Markers",
-            "itemPrice":25.00,
-            "itemQTY":"2",
-            "itemStatus": "Pending"
+            "itemName": "FRAME (SMALL)",
+            "qty": 5,
+            "totalPrice": "95.25",
+            "status":"Denied"
         },
         {
-            "itemName":"Tape",
-            "itemPrice":3.50,
-            "itemQTY":"3",
-            "itemStatus": "Pending"
-        }]
-    }
-]
+            "itemName": "FRAME (MEDIUM)",
+            "qty": 5,
+            "totalPrice": "125.58",
+            "status":"Accepted"
+        },
+        {
+            "itemName": "FRAME (LARGE)",
+            "qty": 5,
+            "totalPrice": "100.25",
+            "status":"Denied"
+        },
+        {
+            "itemName": "FRAME (LARGE)",
+            "qty": 2,
+            "totalPrice": "50.13",
+            "status":"Denied"
+        },
+        {
+            "itemName": "FRAME (LARGE)",
+            "qty": 7,
+            "totalPrice": "250.13",
+            "status":"Accepted"
+        },
+        {
+            "itemName": "FRAME (SMALL)",
+            "qty": 9,
+            "totalPrice": "50.13",
+            "status":"Accepted"
+        },
+        {
+            "itemName": "FRAME (LARGE)",
+            "qty": 1,
+            "totalPrice": "10.00",
+            "status":"Denied"
+        },
+        {
+            "itemName": "FRAME (MEDIUM)",
+            "qty": 4,
+            "totalPrice": "75.85",
+            "status":"Accepted"
+        },
+        {
+            "itemName": "FRAME (SMALL)",
+            "qty": 6,
+            "totalPrice": "76.13",
+            "status":"Denied"
+        }
+    ]
+
