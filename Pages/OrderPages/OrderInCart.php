@@ -17,7 +17,7 @@
             include('../Component/Navbar.php');
         ?>
         
-        <div class="keywords--block custom-card">
+        <div class="keywords--block custom-card" style="top: 90px">
             <h1><Strong>Total</Strong></h1>
             <table style="width: 100%;">
                 <tr>

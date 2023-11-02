@@ -57,7 +57,7 @@ button.order:hover{
 .keywords--block{
     position: -webkit-sticky;
     position: sticky;
-    top: 20px;
+    top: 0;
     display: inline-block;
 }
 .custom-card{
@@ -66,13 +66,11 @@ button.order:hover{
     width: 25%;
     box-shadow: 0 0 30px rgba(0,0,0, .08);
     padding: 0 50px;
-    padding-top:  30;
+    padding-top:  30px;
     float: right;
     margin-top: 30px;
     margin-right: 50px;
     outline-width: medium;
     outline-style: solid;
     outline-color: gray;
-
-
 }

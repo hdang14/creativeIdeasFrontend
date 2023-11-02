@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
     </head>
 
-<header class="navbar nav-background">
+<header class="navbar nav-background" style="position: sticky">
         
           <a class="navbar-brand logo" href="../Store/StorePage.php">Creative Ideas</a>
 
