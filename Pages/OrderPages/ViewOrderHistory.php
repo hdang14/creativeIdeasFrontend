@@ -14,59 +14,13 @@
 
         <!-- Calls and displays navbar -->
         <?php
-            include('Navbar.php');
+            include('../Component/Navbar.php');
         ?>
 
         <!-- Displays Order Items -->
-        <div class ="v-align">
-            <div class="card box-card order-card">
 
-                <h3 class="align-text" id="name1"><Strong>Order 1</Strong></h3>
-                <table>
-                    <tr>
-                        <td class="name" id="itemName1"></td>
-                        <td class="col-size label">QTY:</td>
-                        <td class="col-size" id="itemQty1"></td>
-                        <td class="col-size label">Price:</td>
-                        <td class="col-size" id="itemPrice1"></td>
-                        <td class="col-size label">Status:</td>
-                        <td class="col-size" id="itemStatus1"></td>
-                    </tr>
-                    <tr>
-                        <td class="name" id="itemName2"></td>
-                        <td class="col-size label">QTY:</td>
-                        <td class="col-size" id="itemQty2"></td>
-                        <td class="col-size label">Price:</td>
-                        <td class="col-size" id="itemPrice2"></td>
-                        <td class="col-size label">Status:</td>
-                        <td class="col-size" id="itemStatus2"></td>
-                    </tr>
-                </table>
-            </div>
-        
-            <div class="card box-card order-card">
-                <h3 class="align-text" id="name1"><Strong>Order 2</Strong></h3>
-                <table>
-                    <tr>
-                        <td class="name" id="itemName3"></td>
-                        <td class="col-size label">QTY:</td>
-                        <td class="col-size" id="itemQty3"></td>
-                        <td class="col-size label">Price:</td>
-                        <td class="col-size" id="itemPrice3"></td>
-                        <td class="col-size label">Status:</td>
-                        <td class="col-size" id="itemStatus3"></td>
-                    </tr>
-                    <tr>
-                        <td class="name" id="itemName4"></td>
-                        <td class="col-size label">QTY:</td>
-                        <td class="col-size" id="itemQty4"></td>
-                        <td class="col-size label">Price:</td>
-                        <td class="col-size" id="itemPrice4"></td>
-                        <td class="col-size label">Status:</td>
-                        <td class="col-size" id="itemStatus4"></td>
-                    </tr>
-                </table>
-            </div>
+        <div class ="v-align">
+            <div id="my-order"></div>
         </div>
           
 

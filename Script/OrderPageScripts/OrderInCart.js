@@ -1,16 +1,55 @@
+
+
 fetch("../../Script/OrderPageScripts/OrderInCart.json")
+
     .then(response => response.json())
     .then(data =>{
         console.log(data)
-        document.getElementById("name1").innerHTML = data[0].itemName;
-        document.getElementById("price1").innerHTML = data[0].itemPrice;
-        document.getElementById("Qty1").innerHTML = data[0].itemQTY;
 
-        document.getElementById("name2").innerHTML = data[1].itemName;
-        document.getElementById("price2").innerHTML = data[1].itemPrice;
-        document.getElementById("Qty2").innerHTML = data[1].itemQTY;
+        buildTable(data);
 
-        document.getElementById("subTotal").innerHTML = data[0].itemPrice + data[1].itemPrice;
-        document.getElementById("tax").innerHTML = ((data[0].itemPrice + data[1].itemPrice) * 0.05);
-        document.getElementById("total").innerHTML = (data[0].itemPrice + data[1].itemPrice)+((data[0].itemPrice + data[1].itemPrice) * 0.05);
+        function buildTable(data){
+
+        var li = document.createElement('li');
+        var total = 0;
+        console.log(data);
+        for(var i = 0; i < data.length; i++){
+
+            var row =   
+                `<div class="card box-card order-card" id="Order">
+                    <table>
+                        <tr>
+                            <td class="name"><h3 class="align-text">${data[i].itemName}</h3></td>
+                            <td class="col-size">QTY: </td>
+                            <td class="col-size">${data[i].itemQTY}</td>
+                            <td class="col-size"><label class="align-text">Price: </label></td>
+                            <td class="col-size"><p class="align-text">${data[i].itemPrice.toFixed(2)}</p></td>
+                        </tr>
+                    </table>
+                    <button class="removeBtn Order">Remove</button></td>
+                </div>`
+            total += parseFloat(data[i].itemPrice);
+            li.innerHTML += row; 
+        }
+        document.getElementById("total").innerHTML = total.toFixed(2);
+        document.getElementById("my-table").appendChild(li);
+    }
+
+    
+    const element = document.getElementById("Order");
+
+    function onDeleteRow(e) {
+        if(!e.target.classList.contains("removeBtn")){
+            return;
+        }
+        element.closest("div").remove();
+        console.log(e);
+    }
+    element.addEventListener('click', onDeleteRow);
     })
+    
+    
+    
+    
+
+    

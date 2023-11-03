@@ -42,7 +42,6 @@
     
 </body>
 </html>
-
 <style>
     .center{
         display: grid;
