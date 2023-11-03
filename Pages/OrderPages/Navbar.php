@@ -17,13 +17,14 @@
             </form>
 
             <div class="icons" style="font-size: 24px;">
-                <a href="https://github.com/hdang14/creativeIdeasFrontend/tree/Vincent's-Branch"><i style="color: black;" class="bi bi-github"></i></a>
+                <a href="https://github.com/hdang14/creativeIdeasFrontend/tree/main"><i style="color: black;" class="bi bi-github"></i></a>
                 <li class="nav-item dropdown" style="padding-left: 30px;">
                     <a class="nav-link" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="bi bi-person"></i></a>
                     <div class="dropdown-menu" style="background-color: #F5F5DC;">
                       <h6 style="font-size: 17px;" class="dropdown-header">Hi, John Smith!</h6>
-                      <a style="font-size: 14px;" class="dropdown-item" href="#">View Order History</a>
-                      <a style="font-size: 14px;" class="dropdown-item" href="#">Logout</a>
+                      <a style="font-size: 14px;" class="dropdown-item" href="../Store/AddItemPage.php">Add Item</a>
+                      <a style="font-size: 14px;" class="dropdown-item" href="../OrderPages/ViewOrderHistory.php">View Order History</a>
+                      <a style="font-size: 14px;" class="dropdown-item" href="../Authentication/Login.html">Logout</a>
                     </div>
                 </li>
                 <a href="../OrderPages/OrderInCart.php"><i style="margin-left:25px; color: black;" class="bi bi-cart"></i></a>

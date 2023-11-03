@@ -32,10 +32,10 @@ async function getItems() {
                         <div class="box">
                                         <img
                                 src="placeholder.jpg" style="width:100px; height:100px;"/>
-                                <h4>${responseData[i].itemName}</h4>
-                                <h5>${responseData[i].itemPrice}</h5>
+                                <h4 id="item${i}">${responseData[i].itemName}</h4>
+                                <h5 id="price${i}">${responseData[i].itemPrice}</h5>
                                 <div class="cart">
-                                    <a href="#"><i class="bi bi-cart"></i></a>
+                                    <a onclick="addOrder(${i})"><i class="bi bi-cart"></i></a>
                                 </div>
                             </div>
 
@@ -50,6 +50,7 @@ async function getItems() {
     }
 }
 </script>
+<div id="snackbar">Added to cart</div>
 
     <!-- Calls and displays navbar -->
     <?php
@@ -71,3 +72,20 @@ async function getItems() {
 </body>
 </html>
 
+<script>
+    function addOrder(orderNum) {
+        console.log(document.getElementById("item" + orderNum).innerHTML);
+        showSuccess();
+    }
+
+    function showSuccess() {
+    // Get the snackbar DIV
+    var x = document.getElementById("snackbar");
+
+    // Add the "show" class to DIV
+    x.className = "show";
+
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+</script>
