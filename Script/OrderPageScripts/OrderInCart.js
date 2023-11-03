@@ -7,9 +7,9 @@ fetch("../../Script/OrderPageScripts/OrderInCart.json")
         console.log(data)
 
         buildTable(data);
-    })
-    
-    function buildTable(data){
+
+        function buildTable(data){
+
         var li = document.createElement('li');
         var total = 0;
         console.log(data);
@@ -36,15 +36,19 @@ fetch("../../Script/OrderPageScripts/OrderInCart.json")
     }
 
     
-  //  const element = document.getElementById("Order");
+    const element = document.getElementById("Order");
 
     function onDeleteRow(e) {
         if(!e.target.classList.contains("removeBtn")){
             return;
         }
         element.closest("div").remove();
+        console.log(e);
     }
-  //  element.addEventListener('click', onDeleteRow);
+    element.addEventListener('click', onDeleteRow);
+    })
+    
+    
     
     
 

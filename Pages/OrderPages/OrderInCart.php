@@ -29,7 +29,7 @@
                 <input type="hidden" name="inventoryID" value="10">
                 <input type="hidden" name="customerID" value="1000">
                 <input type="hidden" name="qty" value="3">
-                <submit value="submit" type="button" style="background-color: #F5F5DC;">Check Out</submit>
+                <input value="Check Out" type="submit" style="background-color: #F5F5DC; margin-top: 75px; font-size: 20px; width: 75%"></input>
             </form>
         </div>
 

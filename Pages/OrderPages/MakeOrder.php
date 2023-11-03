@@ -15,7 +15,7 @@
 
         $jsonFilePath = './PlaceOrder.json';
 
-        if(file_exists($jsonFilepath)){
+        if(file_exists($jsonFilePath)){
             $existingData = json_decode(file_get_contents($jsonFilePath), true);
             $existingData[] = $data;
         }else{

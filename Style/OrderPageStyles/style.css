@@ -2,9 +2,6 @@
     font-family: "Cabin Sketch", cursive;
     list-style:none;
 }
-.nav-background, button{
-    background-color: #C6F4BA;
-}
 .box-card{
     margin-left: 0 auto;
     padding: 20px;
@@ -45,7 +42,6 @@ td.label{
     font-weight: bold;
 }
 button.order{
-    font-family: "Cabin Sketch", cursive;
     width: 15%;
     border-radius: 8px;
     background-color: white;
