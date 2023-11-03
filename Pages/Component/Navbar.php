@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
     </head>
 
-<header class="navbar nav-background">
+<header class="navbar nav-background" style="position: sticky">
         
           <a class="navbar-brand logo" href="../Store/StorePage.php">Creative Ideas</a>
 
@@ -22,9 +22,11 @@
                     <a class="nav-link" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="bi bi-person"></i></a>
                     <div class="dropdown-menu" style="background-color: #F5F5DC;">
                       <h6 style="font-size: 17px;" class="dropdown-header">Hi, John Smith!</h6>
+
                       <a style="font-size: 14px;" class="dropdown-item" href="../Store/AddItemPage.php">Add Item</a>
                       <a style="font-size: 14px;" class="dropdown-item" href="../OrderPages/ViewOrderHistory.php">View Order History</a>
-                      <a style="font-size: 14px;" class="dropdown-item" href="../Authentication/Login.html">Logout</a>
+                      <a style="font-size: 14px;" class="dropdown-item" href="../Authentication/Login.html">Logout</a>                    
+
                     </div>
                 </li>
                 <a href="../OrderPages/OrderInCart.php"><i style="margin-left:25px; color: black;" class="bi bi-cart"></i></a>

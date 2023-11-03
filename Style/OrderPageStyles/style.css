@@ -1,13 +1,5 @@
-nav{
-    margin:20px;
-}
-.nav-background, button{
-    background-color: #C6F4BA;
-}
-a, form, label, p{
+*{
     font-family: "Cabin Sketch", cursive;
-}
-ul, li{
     list-style:none;
 }
 .box-card{
@@ -15,20 +7,13 @@ ul, li{
     padding: 20px;
     margin-left: 20px;
     color:  #F5F5DC;
+    display: inline-block;
 }
 .align-text{
     display: inline;
 }
-.total-card{
-    position: fixed;
-    width: 250px;
-    float: right;
-    margin-right: 50px;
-    margin-top: 50px;
-
-}
 .v-align{
-    display:inline-block;
+    display: inline-block;
     vertical-align: top;
     min-width: 700px;
     padding-top: 30px;
@@ -41,7 +26,7 @@ table.size{
     width: 100%;
 }
 td{
-    text-align: right;
+    text-align: left;
     font-family: "Cabin Sketch", cursive;
 }
 td.name{
@@ -50,9 +35,38 @@ td.name{
     font-weight: bold;
 }
 td.col-size{
-    width: 2%;
-    text-align: center;
+    width: 3%;
+    text-align: left;
 }
 td.label{
     font-weight: bold;
+}
+button.order{
+    width: 15%;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+}
+button.order:hover{
+    background-color:#F5F5DC;
+}
+.keywords--block{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    display: inline-block;
+}
+.custom-card{
+    border-radius: 1em;
+    height: 35%;
+    width: 25%;
+    box-shadow: 0 0 30px rgba(0,0,0, .08);
+    padding: 0 50px;
+    padding-top:  30px;
+    float: right;
+    margin-top: 30px;
+    margin-right: 50px;
+    outline-width: medium;
+    outline-style: solid;
+    outline-color: gray;
 }

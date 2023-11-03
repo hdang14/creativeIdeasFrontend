@@ -14,56 +14,29 @@
 
         <!-- Calls and displays navbar -->
         <?php
-            include('Navbar.php');
+            include('../Component/Navbar.php');
         ?>
-
-        <div class="card box-card total-card">
-            <h1>Subtotal</h1>
-            <table>
+        
+        <div class="keywords--block custom-card" style="top: 90px">
+            <h1><Strong>Total</Strong></h1>
+            <table style="width: 100%;">
                 <tr>
-                    <th>Subtotal:</th>
-                    <td id="subTotal"></td>
+                    <th style="width: 45%;">Total:</th>
+                    <td id="total" style="width 30%;"></td>
                 </tr>
             </table>
-            <form action="#">
-                <submit value="submit" type="button" style="background-color: #F5F5DC;">Check Out</submit>
+            <form action="./MakeOrder.php" method="POST">
+                <input type="hidden" name="inventoryID" value="10">
+                <input type="hidden" name="customerID" value="1000">
+                <input type="hidden" name="qty" value="3">
+                <input value="Check Out" type="submit" style="background-color: #F5F5DC; margin-top: 75px; font-size: 20px; width: 75%"></input>
             </form>
         </div>
 
         <div class ="v-align">
-            <div class="card box-card order-card">
-                <table>
-                    <tr>
-                        <td class="name"><h3 class="align-text" id="name1">Item Name</h3></td>
-                        
-                        <form action="#" class="align-text">
-                            <td class="col-size"><label for="QTY" class="align-text">QTY: </label></td>
-                            <td class="col-size"><select id="Qty1" name="qty" class="align-text"></select></td>
-                        </form>
-                        
-                    <td class="col-size"><label class="align-text">Price: </label></td>
-                    <td class="col-size"><p class="align-text" id="price1"></p></td>
-                    </tr>
-                </table>
-                <a href="#">Remove Item</a>
-            </div>
-
-            <div class="card box-card order-card">
-                <table>
-                    <tr>
-                        <td class="name"><h3 class="align-text" id="name2">Item Name</h3></td>
-                        
-                        <form action="#" class="align-text">
-                            <td class="col-size"><label for="QTY" class="align-text">QTY: </label></td>
-                            <td class="col-size"><select id="Qty2" name="qty" class="align-text"></select></td>
-                        </form>
-                        
-                    <td class="col-size"><label class="align-text">Price: </label></td>
-                    <td class="col-size"><p class="align-text" id="price2"></p></td>
-                    </tr>
-                </table>
-                <a href="#">Remove Item</a>
-            </div>
+            
+            <div id="my-table"></div>
+           
         </div>
           
 
