@@ -54,7 +54,7 @@ async function getItems() {
 
     <!-- Calls and displays navbar -->
     <?php
-            include('../OrderPages/Navbar.php');
+            include('../Component/Navbar.php');
     ?>
 
    
