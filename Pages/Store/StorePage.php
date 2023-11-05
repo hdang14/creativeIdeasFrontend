@@ -43,7 +43,8 @@ async function getItems() {
                                         <img
                                 src="placeholder.jpg" style="width:100px; height:100px;"/>
                                 <h4 id="item${i}">${responseData[i].itemName}</h4>
-                                <h5 id="price${i}">${responseData[i].itemPrice}</h5>
+                                <h5 id="price${i}">$ ${responseData[i].itemPrice}</h5>
+                                <h5 id="desc${i}">${responseData[i].itemDesc}</h5>
                                 <div class="cart">
                                     <a onclick="addOrder(${i})"><i class="bi bi-cart"></i></a>
                                 </div>
