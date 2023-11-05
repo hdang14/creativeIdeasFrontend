@@ -22,7 +22,7 @@
             <table style="width: 100%;">
                 <tr>
                     <th style="width: 45%;">Total:</th>
-                    <td id="total" style="width 30%;"></td>
+                    <td id="total" style="width: 30%;"></td>
                 </tr>
             </table>
             <form action="./MakeOrder.php" method="POST">
