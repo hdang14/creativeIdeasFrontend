@@ -10,13 +10,13 @@
 
     <body>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        <script src="../../Script/OrderPageScripts/OrderInCart.js"></script>
+        
 
         <!-- Calls and displays navbar -->
         <?php
             include('../Component/Navbar.php');
         ?>
-        
+  
         <div class="keywords--block custom-card" style="top: 90px">
             <h1><Strong>Total</Strong></h1>
             <table style="width: 100%;">
@@ -29,16 +29,17 @@
                 <input type="hidden" name="inventoryID" value="10">
                 <input type="hidden" name="customerID" value="1000">
                 <input type="hidden" name="qty" value="3">
-                <input value="Check Out" type="submit" style="background-color: #F5F5DC; margin-top: 75px; font-size: 20px; width: 75%"></input>
+                <input onclick="localStorage.clear()" value="Check Out" type="submit" style="background-color: #F5F5DC; margin-top: 75px; font-size: 20px; width: 75%"></input>
             </form>
         </div>
 
         <div class ="v-align">
             
-            <div id="my-table"></div>
+            <div id="my-table" style="margin-left: 20px"></div>
            
         </div>
-          
+
+        <script src="../../Script/OrderPageScripts/OrderInCart.js"></script>
 
     </body>
 

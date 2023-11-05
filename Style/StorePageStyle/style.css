@@ -93,7 +93,7 @@ img {
     margin-bottom: 20px;
 }
 
-.box .cart i{
+.box i{
     position: absolute;
     top: 0;
     left: 0;
@@ -106,10 +106,20 @@ img {
     font-size: 22px;
 }
 
+.edit{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 35px;
+    margin-bottom: 35px;
+}
+
 .cart:hover{
     opacity: 0.6;
 }
-
+.edit:hover{
+    opacity: 0.6;
+}
 .box:hover{
     transform: translateY(-5px);
 }
