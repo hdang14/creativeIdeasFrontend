@@ -9,12 +9,12 @@
 </head>
 
 <header class="navbar nav-background" style="position: sticky">
-
-    <a class="navbar-brand logo" href="../Store/StorePage.php">Creative Ideas</a>
+        
+          <a class="navbar-brand logo" href="../Store/StorePage.php">Creative Ideas</a>
 
     <form class="d-flex">
         <input id="search-input" class="form-control me-sm-2" type="search" placeholder="Search" style="margin-left: 50px; width: 100%">
-        <button id="search-button" class="btn btn-secondary" type="button"><i class="bi bi-search"></i></button>
+        <button onclick="window.location.href = '../Store/StorePage.php';" id="search-button" class="btn btn-secondary" type="button"><i class="bi bi-search"></i></button>
     </form>
     <script>
         function getName() {

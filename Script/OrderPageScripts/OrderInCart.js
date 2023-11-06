@@ -12,27 +12,24 @@ if (cart.length === 0) {
     document.getElementById("total").innerHTML = '$ ' + 0;
 } else {
     buildTable(cart);
+    placeOrder();
 }
 
-// fetch("../../Script/OrderPageScripts/OrderInCart.json")
+function placeOrder(){
+    const items = [];
+    const price = [];
+    const ids = [];
+    for (var i = 0; i < cart.length; i++){
+        ids[i] = cart[i].invId;
+        items[i] = cart[i].itemQTY;
+        price[i] = cart[i].itemPrice + "";
+    }
 
-//     .then(response => response.json())
-//     .then(data =>{
-//         console.log(data)
-
-//         buildTable(data);
-
-//     const element = document.getElementById("Order");
-
-//     function onDeleteRow(e) {
-//         if(!e.target.classList.contains("removeBtn")){
-//             return;
-//         }
-//         element.closest("div").remove();
-//         console.log(e);
-//     }
-//     element.addEventListener('click', onDeleteRow);
-//     })
+    document.getElementById('idList').value = ids;
+    document.getElementById('qtyList').value = items;
+    document.getElementById('itemPrice').value = price;
+    
+}
 
 function removeOrder(orderNum) {
     // Get the cart data from local storage
@@ -70,7 +67,7 @@ function buildTable(data){
                         <td class="col-size">QTY: </td>
                         <td class="col-size">${data[i].itemQTY}</td>
                         <td class="col-size"><label class="align-text">Price: </label></td>
-                        <td class="col-size"><p class="align-text">${parseFloat(data[i].itemPrice).toFixed(2)}</p></td>
+                        <td class="col-size"><p class="align-text">$ ${parseFloat(data[i].itemPrice).toFixed(2)}</p></td>
                     </tr>
                 </table>
                 <button onclick="removeOrder(${i})" class="Order">Remove</button></td>
