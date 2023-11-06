@@ -13,7 +13,6 @@ async function getOrders() {
     
     if(response) {
         const responseData = await response.json();
-        console.log(responseData);
 
         var li = document.createElement('li');
 
