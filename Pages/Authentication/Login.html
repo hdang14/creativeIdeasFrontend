@@ -1,6 +1,9 @@
+<!DOCTYPE html>
 <html>
   <header>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="../../Style/bootstrap.css" />
+    <script type="text/javascript" src="../../Script/login.js"></script>
   </header>
 
   <body>
@@ -42,7 +45,8 @@
             />
           </div>
           <button
-            type="submit"
+	    type="button"
+            onclick="login()"
             class="btn btn-primary"
             style="margin-top: 10px"
           >
@@ -50,11 +54,12 @@
           </button>
         </form>
         <a href="CreateUser.html">Sign Up</a>
+        <p id="errorMsg" style="color: red;"></p>
       </div>
     </div>
   </body>
 
   <footer>
     <p>Creative Ideas ©2023</p>
-  </footer>
+  </footer>  
 </html>
