@@ -1,6 +1,6 @@
 async function getOrders() {
     const request = {
-        customerId: 10002
+        customerId: localStorage.getItem("custId")
     };
     
     const response = await fetch('http://localhost/CreativeIdeasBackend/OrdersApi/index.php/GetOrders', {

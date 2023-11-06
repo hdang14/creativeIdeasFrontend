@@ -1,6 +1,6 @@
 async function login() {
 
-    console.log("Funtion Ran!");
+    console.log("Function Ran!");
 
     const u = document.getElementById("username").value;
     const p = document.getElementById("pass").value;
@@ -25,6 +25,7 @@ async function login() {
         const data = await response.json();
         if (typeof data.customer_id != "undefined") {
             localStorage.setItem("user_name", data.name);
+            localStorage.setItem("custId", data.customer_id);
             console.log("GOT HERE");
             window.location.href = "http://localhost:8080/Pages/Store/StorePage.php";
         } else {

@@ -52,9 +52,7 @@
                                 <div class="cart">
                                     <a onclick="addOrder(${i})"><i class="bi bi-cart"></i></a>
                                 </div>
-                                <div class="edit">
-                                    <a data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="bi bi-pencil-square"></i></a>
-                                </div>
+
                             </li>
                     
                `
