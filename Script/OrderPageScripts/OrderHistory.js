@@ -1,39 +1,47 @@
-fetch("../../Script/OrderPageScripts/OrderHistory.json")
-    .then(response => response.json())
-    .then(data =>{
-        console.log(data)
-   
-        buildTable(data);
-        
-    })
+async function getOrders() {
+    const request = {
+        customerId: 10002
+    };
+    
+    const response = await fetch('http://localhost/CreativeIdeasBackend/OrdersApi/index.php/GetOrders', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(request),
+    });
+    
+    if(response) {
+        const responseData = await response.json();
+        console.log(responseData);
 
-    function buildTable(data){
         var li = document.createElement('li');
-        
-        console.log(data);
 
-        for(var i in data){
+        for(var i in responseData){
 
-                    var row = 
-                        `<div class="card box-card order-card">
+            var row = 
+                `<div class="card box-card order-card">
 
-                            <h3 class="align-text"><Strong>Order: ${(i)}</Strong></h3>
-                                <table>
-                                    <tr>
-                                        <td class="name">${data[i].itemName}</td>
-                                        <td class="col-size label">QTY:</td>
-                                        <td class="col-size">${data[i].qty}</td>
-                                        <td class="col-size label">Price:</td>
-                                        <td class="col-size">${data[i].totalPrice}</td>
-                                        <td class="col-size label">Status:</td>
-                                        <td class="col-size"">${data[i].status}</td>
-                                    </tr>
-                                </table>
-                        </div>`
-                            
-                    li.innerHTML += row;
-                }
-            
-        
-        document.getElementById("my-order").appendChild(li);
+                    <h3 class="align-text"><Strong>Order: ${parseInt(i) + 1}</Strong></h3>
+                        <table>
+                            <tr>
+                                <td class="name">${responseData[i].itemName}</td>
+                                <td class="col-size label">QTY:</td>
+                                <td class="col-size">${responseData[i].qty}</td>
+                                <td class="col-size label">Price:</td>
+                                <td class="col-size">${responseData[i].totalPrice}</td>
+                                <td class="col-size label">Status:</td>
+                                <td class="col-size"">${responseData[i].status}</td>
+                            </tr>
+                        </table>
+                </div>`
+                    
+            li.innerHTML += row;
+        }
+    
+
+document.getElementById("my-order").appendChild(li);
     }
+}
+
+getOrders();
