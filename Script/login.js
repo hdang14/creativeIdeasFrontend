@@ -1,15 +1,28 @@
-async function login() {
+var hash = "";
 
-    console.log("Function Ran!");
+async function sha256(message) {
+    const msgBuffer = new TextEncoder().encode(message);                    
+
+    const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+                
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+    hash = hashHex; 
+
+    return hashHex;
+}
+
+async function login() {
 
     const u = document.getElementById("username").value;
     const p = document.getElementById("pass").value;
-
-    console.log("username: " + u + " password: " + p);
+    const pass = await sha256(p);
 
     const request = {
         username: u,
-        password: p
+        password: pass
     };
 
     console.log(JSON.stringify(request));
@@ -27,7 +40,7 @@ async function login() {
             localStorage.setItem("user_name", data.name);
             localStorage.setItem("custId", data.customer_id);
             console.log("GOT HERE");
-            window.location.href = "http://localhost:3000/Pages/Store/StorePage.php";
+            window.location.href = "http://localhost/CreativeIdeasFrontend/Pages/Store/StorePage.php";
         } else {
             document.getElementById("errorMsg").innerText = "Invalid Username / Password";
         }
