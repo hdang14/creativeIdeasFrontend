@@ -12,27 +12,20 @@ if (cart.length === 0) {
     document.getElementById("total").innerHTML = '$ ' + 0;
 } else {
     buildTable(cart);
+    placeOrder();
 }
 
-// fetch("../../Script/OrderPageScripts/OrderInCart.json")
-
-//     .then(response => response.json())
-//     .then(data =>{
-//         console.log(data)
-
-//         buildTable(data);
-
-//     const element = document.getElementById("Order");
-
-//     function onDeleteRow(e) {
-//         if(!e.target.classList.contains("removeBtn")){
-//             return;
-//         }
-//         element.closest("div").remove();
-//         console.log(e);
-//     }
-//     element.addEventListener('click', onDeleteRow);
-//     })
+function placeOrder(){
+    const items = [];
+    const price = [];
+    for(var i = 0; i < cart.length; i++){
+        items[i] = cart[i].itemQTY;
+        price[i] = cart[i].itemPrice + "";
+    }
+    console.log(price);
+    document.getElementById('qtyList').value = items;
+    document.getElementById('itemPrice').value = price;
+}
 
 function removeOrder(orderNum) {
     // Get the cart data from local storage

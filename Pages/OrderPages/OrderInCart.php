@@ -26,10 +26,12 @@
                 </tr>
             </table>
             <form action="./MakeOrder.php" method="POST">
-                <input type="hidden" name="inventoryID" value="10">
                 <input type="hidden" name="customerID" value="1000">
-                <input type="hidden" name="qty" value="3">
-                <input onclick="localStorage.clear()" value="Check Out" type="submit" style="background-color: #F5F5DC; margin-top: 75px; font-size: 20px; width: 75%"></input>
+                <input type="hidden" name="price[]" id="itemPrice">                
+                <input type="hidden" name="qty[]" id="qtyList">
+                
+                
+                <input onclick="localStorage.clear()" value="Check Out" type="submit" style="background-color: #F5F5DC; margin-top: 75px; font-size: 20px; width: 125px"></input>
             </form>
         </div>
 

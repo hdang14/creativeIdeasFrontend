@@ -1,16 +1,25 @@
 <?php
     
 
-        $invID      = $_POST["inventoryID"];
-        $customerID = $_POST["customerID"];
+        $price      = $_POST["price"];
+        $customerId = $_POST["customerID"];
         $qty        = $_POST["qty"];
 
-        echo $invID . " " . $customerID . " " . $qty . "</br>";
+        
+        $qtyList = explode(",",$qty[0]);
+        $priceList = explode(",",$price[0]);
+        $size = count($priceList);
+
+        for($i = 0; $i < $size; $i++){
+            $items[] = array(
+                'price:' => $priceList[$i],
+                "qty:" => $qtyList[$i] 
+            );
+        }
 
         $data = array(
-            'invID'      => $invID,
-            'customerID' => $customerID,
-            'qty'        => $qty
+            'items' => $items,
+            'customerId' => $customerId
         );
 
         $jsonFilePath = './PlaceOrder.json';
@@ -25,5 +34,5 @@
         $jsonData = json_encode($existingData, JSON_PRETTY_PRINT);
         file_put_contents($jsonFilePath, $jsonData);
 
-    
+    header("Location: ../Store/StorePage.php");
 ?>

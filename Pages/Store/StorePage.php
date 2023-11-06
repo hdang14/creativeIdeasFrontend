@@ -129,6 +129,7 @@ function performSearch() {
     function addOrder(orderNum) {
         let name = document.getElementById("item" + orderNum).innerHTML;
         let price = document.getElementById("price" + orderNum).innerHTML;
+        price = price.split(" ")[1];
 
         // Get the existing cart from local storage (or create an empty cart)
         const cart = JSON.parse(localStorage.getItem('cart')) || [];

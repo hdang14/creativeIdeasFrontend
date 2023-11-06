@@ -1,47 +1,72 @@
 [
     {
-        "invID": "10",
-        "customerID": "1000",
-        "qty": "3"
+        "items": [
+            {
+                "price:": "20",
+                "qty:": "1"
+            },
+            {
+                "price:": "11.46",
+                "qty:": "1"
+            },
+            {
+                "price:": "16.3",
+                "qty:": "1"
+            },
+            {
+                "price:": "11.46",
+                "qty:": "1"
+            },
+            {
+                "price:": "11",
+                "qty:": "1"
+            }
+        ],
+        "customerId": "1000"
     },
     {
-        "invID": "10",
-        "customerID": "1000",
-        "qty": "3"
-    },
-    {
-        "invID": "10",
-        "customerID": "1000",
-        "qty": "3"
-    },
-    {
-        "invID": "10",
-        "customerID": "1000",
-        "qty": "3"
-    },
-    {
-        "invID": "10",
-        "customerID": "1000",
-        "qty": "3"
-    },
-    {
-        "invID": "10",
-        "customerID": "1000",
-        "qty": "3"
-    },
-    {
-        "invID": "10",
-        "customerID": "1000",
-        "qty": "3"
-    },
-    {
-        "invID": "10",
-        "customerID": "1000",
-        "qty": "3"
-    },
-    {
-        "invID": "10",
-        "customerID": "1000",
-        "qty": "3"
+        "items": [
+            {
+                "price:": "11.46",
+                "qty:": "1"
+            },
+            {
+                "price:": "11.46",
+                "qty:": "1"
+            },
+            {
+                "price:": "11.46",
+                "qty:": "1"
+            },
+            {
+                "price:": "11.46",
+                "qty:": "1"
+            },
+            {
+                "price:": "11.46",
+                "qty:": "1"
+            },
+            {
+                "price:": "11.46",
+                "qty:": "1"
+            },
+            {
+                "price:": "11.46",
+                "qty:": "1"
+            },
+            {
+                "price:": "11.46",
+                "qty:": "1"
+            },
+            {
+                "price:": "11.46",
+                "qty:": "1"
+            },
+            {
+                "price:": "11.46",
+                "qty:": "1"
+            }
+        ],
+        "customerId": "1000"
     }
 ]
