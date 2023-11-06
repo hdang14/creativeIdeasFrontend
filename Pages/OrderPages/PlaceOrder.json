@@ -1,47 +1,77 @@
 [
     {
-        "invID": "10",
-        "customerID": "1000",
-        "qty": "3"
+        "items": [
+            {
+                "id": "30001",
+                "price": "15.00",
+                "qty": "1"
+            },
+            {
+                "id": "30002",
+                "price": "18.25",
+                "qty": "1"
+            }
+        ],
+        "customerId": "1000"
     },
     {
-        "invID": "10",
-        "customerID": "1000",
-        "qty": "3"
+        "items": [
+            {
+                "id": "30001",
+                "price": "15.00",
+                "qty": "1"
+            },
+            {
+                "id": "30002",
+                "price": "18.25",
+                "qty": "1"
+            }
+        ],
+        "customerId": "1000"
     },
     {
-        "invID": "10",
-        "customerID": "1000",
-        "qty": "3"
+        "items": [
+            {
+                "id": "30001",
+                "price": "15.00",
+                "qty": "1"
+            },
+            {
+                "id": "30002",
+                "price": "18.25",
+                "qty": "1"
+            }
+        ],
+        "customerId": "1000"
     },
     {
-        "invID": "10",
-        "customerID": "1000",
-        "qty": "3"
+        "items": [
+            {
+                "id": "30001",
+                "price": "15.00",
+                "qty": "1"
+            },
+            {
+                "id": "30002",
+                "price": "18.25",
+                "qty": "1"
+            }
+        ],
+        "customerId": "1000"
     },
     {
-        "invID": "10",
-        "customerID": "1000",
-        "qty": "3"
-    },
-    {
-        "invID": "10",
-        "customerID": "1000",
-        "qty": "3"
-    },
-    {
-        "invID": "10",
-        "customerID": "1000",
-        "qty": "3"
-    },
-    {
-        "invID": "10",
-        "customerID": "1000",
-        "qty": "3"
-    },
-    {
-        "invID": "10",
-        "customerID": "1000",
-        "qty": "3"
+        "items": [
+            {
+                "id": "30001",
+                "price": "15.00",
+                "qty": "1"
+            },
+            {
+                "id": "30002",
+                "price": "18.25",
+                "qty": "1"
+            }
+        ],
+        "customerId": "1000"
     }
 ]

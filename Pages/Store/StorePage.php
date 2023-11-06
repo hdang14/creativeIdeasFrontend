@@ -13,6 +13,7 @@
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="../../Script/ShowSuccess.js"></script>
     <script type="text/javascript">
     window.onload = function () {
         getItems();
@@ -32,6 +33,8 @@ async function getItems() {
     if(response) {
         responseData = await response.json();
 
+        console.log(responseData);
+
         var div = document.getElementById("shop");
 
         for(var i in responseData){
@@ -42,6 +45,7 @@ async function getItems() {
                         <li class="box">
                                         <img
                                 src="placeholder.jpg" style="width:100px; height:100px;"/>
+                                <h4 id="id${i}" style="display: none;">${responseData[i].inv_id}</h4>
                                 <h4 id="item${i}">${responseData[i].name}</h4>
                                 <h5 id="price${i}">$ ${responseData[i].price}</h5>
                                 <h5 id="desc${i}">${responseData[i].description}</h5>
@@ -127,6 +131,7 @@ function performSearch() {
 
 <script>
     function addOrder(orderNum) {
+        let id = document.getElementById("id" + orderNum).innerHTML;
         let name = document.getElementById("item" + orderNum).innerHTML;
         let price = document.getElementById("price" + orderNum).innerHTML;
         price = price.split(' ')[1];
@@ -137,7 +142,7 @@ function performSearch() {
         cartSizeElement.textContent = cart.length;
 
         // Add the selected item to the cart
-        cart.push({ itemName: name, itemPrice: price, itemQTY: 1 });
+        cart.push({ invId: id ,itemName: name, itemPrice: price, itemQTY: 1 });
 
         console.log(cart);
         // Store the updated cart back in local storage
@@ -148,16 +153,4 @@ function performSearch() {
 
         showSuccess();
     }
-
-    function showSuccess() {
-        // Get the snackbar DIV
-        var x = document.getElementById("snackbar");
-
-        // Add the "show" class to DIV
-        x.className = "show";
-
-        // After 3 seconds, remove the show class from DIV
-        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-
-    }   
 </script>

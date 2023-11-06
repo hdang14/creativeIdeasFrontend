@@ -10,12 +10,64 @@
 
     <body>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        
+        <script src="../../Script/ShowSuccess.js"></script>
+        <script>
+            async function createOrder(){
+                const custId = document.getElementById("customerId").value;
+                const prices = document.getElementById("itemPrice").value.split(",");
+                const qty = document.getElementById("qtyList").value.split(",");
+                const ids = document.getElementById("idList").value.split(",");
+
+                let items = [];
+                for (var i = 0; i < ids.length; i++) {
+                    items.push({
+                        invID: parseInt(ids[i]),
+                        qty: parseInt(qty[i]),
+                    });
+                }
+
+                const request = {
+                    items: items,
+                    customerID: parseInt(custId),
+                };
+
+                const response = await fetch('http://localhost/CreativeIdeasBackend/OrdersApi/index.php/CreateOrder', {
+                    method: 'POST',
+                    headers:{
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(request),
+
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                let responseData = await response.json();
+                console.log(responseData);
+                localStorage.clear();
+                const cartSizeElement = document.getElementById('cart-size');
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cartSizeElement.textContent = cart.length;
+
+                const cartList = document.getElementById('my-table');
+                cartList.innerHTML = '  Your cart is empty.';
+                document.getElementById("total").innerHTML =  '$ ' + 0;
+
+
+                showSuccess();
+            }
+
+            
+        </script>
 
         <!-- Calls and displays navbar -->
         <?php
             include('../Component/Navbar.php');
         ?>
+
+    <div id="snackbar">Successfully ordered</div>
   
         <div class="keywords--block custom-card" style="top: 90px">
             <h1><Strong>Total</Strong></h1>
@@ -25,11 +77,13 @@
                     <td id="total" style="width 30%;"></td>
                 </tr>
             </table>
-            <form action="./MakeOrder.php" method="POST">
-                <input type="hidden" name="inventoryID" value="10">
-                <input type="hidden" name="customerID" value="1000">
-                <input type="hidden" name="qty" value="3">
-                <input onclick="localStorage.clear()" value="Check Out" type="submit" style="background-color: #F5F5DC; margin-top: 75px; font-size: 20px; width: 75%"></input>
+            <form>
+                <input type="hidden" id="customerId" value="1000">
+                <input type="hidden" name="price[]" id="itemPrice">                
+                <input type="hidden" name="qty[]" id="qtyList">
+                <input type="hidden" name="id[]" id="idList">
+                
+                <input onclick="createOrder()" value="Check Out" type="button" style="background-color: #F5F5DC; margin-top: 75px; font-size: 20px; width: 125px"></input>
             </form>
         </div>
 

@@ -19,6 +19,7 @@
                 cartSizeElement.textContent = cart.length;
             }
         </script>
+        <script src="../../Script/ShowSuccess.js"></script>
         <script>
             async function addItem(){
 
@@ -49,17 +50,6 @@
 
                 showSuccess();
             }
-            function showSuccess() {
-                // Get the snackbar DIV
-                var x = document.getElementById("snackbar");
-
-                // Add the "show" class to DIV
-                x.className = "show";
-
-                // After 3 seconds, remove the show class from DIV
-                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-
-            }  
         </script>
    <?php include("../Component/Navbar.php") ?>
 
