@@ -12,8 +12,8 @@
 
         for($i = 0; $i < $size; $i++){
             $items[] = array(
-                'price:' => $priceList[$i],
-                "qty:" => $qtyList[$i] 
+                'price' => $priceList[$i],
+                "qty" => $qtyList[$i] 
             );
         }
 
