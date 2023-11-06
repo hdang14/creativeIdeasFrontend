@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,35 +10,36 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
-    
+
 </head>
+
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script type="text/javascript">
-    window.onload = function () {
-        getItems();
-        const searchInput = document.getElementById('search-input');
-        const searchButton = document.getElementById('search-button');
+        window.onload = function() {
+            getItems();
+            const searchInput = document.getElementById('search-input');
+            const searchButton = document.getElementById('search-button');
 
-        searchButton.addEventListener('click', performSearch);
-        searchInput.addEventListener('input', performSearch);
+            searchButton.addEventListener('click', performSearch);
+            searchInput.addEventListener('input', performSearch);
 
-        const cartSizeElement = document.getElementById('cart-size');
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cartSizeElement.textContent = cart.length;
-    }
-async function getItems() {
-    const response = await fetch("http://localhost/CreativeIdeasBackend/InventoryApi/index.php/getInventory");
-    
-    if(response) {
-        responseData = await response.json();
+            const cartSizeElement = document.getElementById('cart-size');
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cartSizeElement.textContent = cart.length;
+        }
+        async function getItems() {
+            const response = await fetch("http://localhost/CreativeIdeasBackend/InventoryApi/index.php/getInventory");
 
-        var div = document.getElementById("shop");
+            if (response) {
+                responseData = await response.json();
 
-        for(var i in responseData){
+                var div = document.getElementById("shop");
 
-            var row = 
-                `
+                for (var i in responseData) {
+
+                    var row =
+                        `
                     
                         <li class="box">
                                         <img
@@ -54,75 +56,77 @@ async function getItems() {
                             </li>
                     
                `
-                    
-            div.innerHTML += row;
-        }
-    
 
-    }
-}
-function performSearch() {
-        const searchInput = document.getElementById('search-input').value.toLowerCase();
-        const items = document.querySelectorAll('.shop .box');
+                    div.innerHTML += row;
+                }
 
-        items.forEach(function (item, index) {
-            const itemName = document.getElementById(`item${index}`).textContent.toLowerCase();
 
-            if (itemName.includes(searchInput)) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
             }
-        });
-    }
-</script>
+        }
 
-<div id="snackbar">Added to cart</div>
+        function performSearch() {
+            const searchInput = document.getElementById('search-input').value.toLowerCase();
+            const items = document.querySelectorAll('.shop .box');
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
-        <button class="btn" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Item Name:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">Item Price:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save</button>
-      </div>
+            items.forEach(function(item, index) {
+                const itemName = document.getElementById(`item${index}`).textContent.toLowerCase();
+
+                if (itemName.includes(searchInput)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+    <div id="snackbar">Added to cart</div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
+                    <button class="btn" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Item Name:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Item Price:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
     <!-- Calls and displays navbar -->
     <?php
-            include('../Component/Navbar.php');
+    include('../Component/Navbar.php');
     ?>
 
-   
-<section class="shop"> 
-    <ul class="container" id="shop" style="margin-top: 20px">
-                      
-    </ul>
-</section>
+
+    <section class="shop">
+        <ul class="container" id="shop" style="margin-top: 20px">
+
+        </ul>
+    </section>
 
     <footer>
-        
+
     </footer>
 
 </body>
+
 </html>
 
 <script>
@@ -137,7 +141,11 @@ function performSearch() {
         cartSizeElement.textContent = cart.length;
 
         // Add the selected item to the cart
-        cart.push({ itemName: name, itemPrice: price, itemQTY: 1 });
+        cart.push({
+            itemName: name,
+            itemPrice: price,
+            itemQTY: 1
+        });
 
         console.log(cart);
         // Store the updated cart back in local storage
@@ -157,7 +165,9 @@ function performSearch() {
         x.className = "show";
 
         // After 3 seconds, remove the show class from DIV
-        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        setTimeout(function() {
+            x.className = x.className.replace("show", "");
+        }, 3000);
 
-    }   
+    }
 </script>
