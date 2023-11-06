@@ -43,5 +43,10 @@
         "invID": "10",
         "customerID": "1000",
         "qty": "3"
+    },
+    {
+        "invID": "10",
+        "customerID": "1000",
+        "qty": "3"
     }
 ]

@@ -27,7 +27,7 @@
         cartSizeElement.textContent = cart.length;
     }
 async function getItems() {
-    const response = await fetch("../../Script/OrderPageScripts/OrderInCart.json");
+    const response = await fetch("http://localhost/CreativeIdeasBackend/InventoryApi/index.php/getInventory");
     
     if(response) {
         responseData = await response.json();
@@ -42,9 +42,9 @@ async function getItems() {
                         <li class="box">
                                         <img
                                 src="placeholder.jpg" style="width:100px; height:100px;"/>
-                                <h4 id="item${i}">${responseData[i].itemName}</h4>
-                                <h5 id="price${i}">$ ${responseData[i].itemPrice}</h5>
-                                <h5 id="desc${i}">${responseData[i].itemDesc}</h5>
+                                <h4 id="item${i}">${responseData[i].name}</h4>
+                                <h5 id="price${i}">$ ${responseData[i].price}</h5>
+                                <h5 id="desc${i}">${responseData[i].description}</h5>
                                 <div class="cart">
                                     <a onclick="addOrder(${i})"><i class="bi bi-cart"></i></a>
                                 </div>
@@ -129,7 +129,7 @@ function performSearch() {
     function addOrder(orderNum) {
         let name = document.getElementById("item" + orderNum).innerHTML;
         let price = document.getElementById("price" + orderNum).innerHTML;
-
+        price = price.split(' ')[1];
         // Get the existing cart from local storage (or create an empty cart)
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -139,6 +139,7 @@ function performSearch() {
         // Add the selected item to the cart
         cart.push({ itemName: name, itemPrice: price, itemQTY: 1 });
 
+        console.log(cart);
         // Store the updated cart back in local storage
         localStorage.setItem('cart', JSON.stringify(cart));
 
