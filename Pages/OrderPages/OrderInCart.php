@@ -13,7 +13,7 @@
         <script src="../../Script/ShowSuccess.js"></script>
         <script>
             async function createOrder(){
-                const custId = document.getElementById("customerId").value;
+                const custId = localStorage.getItem("custId");
                 const prices = document.getElementById("itemPrice").value.split(",");
                 const qty = document.getElementById("qtyList").value.split(",");
                 const ids = document.getElementById("idList").value.split(",");
@@ -30,6 +30,8 @@
                     items: items,
                     customerID: parseInt(custId),
                 };
+
+                console.log(request)
 
                 const response = await fetch('http://localhost/CreativeIdeasBackend/OrdersApi/index.php/CreateOrder', {
                     method: 'POST',
@@ -85,7 +87,6 @@
                 </tr>
             </table>
             <form>
-                <input type="hidden" id="customerId" value="1000">
                 <input type="hidden" name="price[]" id="itemPrice">                
                 <input type="hidden" name="qty[]" id="qtyList">
                 <input type="hidden" name="id[]" id="idList">

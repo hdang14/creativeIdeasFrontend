@@ -27,7 +27,7 @@ async function login() {
             localStorage.setItem("user_name", data.name);
             localStorage.setItem("custId", data.customer_id);
             console.log("GOT HERE");
-            window.location.href = "http://localhost:8080/Pages/Store/StorePage.php";
+            window.location.href = "http://localhost:3000/Pages/Store/StorePage.php";
         } else {
             document.getElementById("errorMsg").innerText = "Invalid Username / Password";
         }
