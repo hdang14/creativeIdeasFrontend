@@ -82,33 +82,6 @@
 
     <div id="snackbar">Added to cart</div>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
-                    <button class="btn" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Item Name:</label>
-                            <input type="text" class="form-control" id="recipient-name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="message-text" class="col-form-label">Item Price:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Calls and displays navbar -->
     <?php
     include('../Component/Navbar.php');
@@ -144,7 +117,6 @@
         // Add the selected item to the cart
         cart.push({ invId: id ,itemName: name, itemPrice: price, itemQTY: 1 });
 
-        console.log(cart);
         // Store the updated cart back in local storage
         localStorage.setItem('cart', JSON.stringify(cart));
 

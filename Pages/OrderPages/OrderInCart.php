@@ -45,10 +45,17 @@
                 }
 
                 let responseData = await response.json();
-                console.log(responseData);
-                localStorage.clear();
+
                 const cartSizeElement = document.getElementById('cart-size');
-                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+     
+                // Set cart to empty
+                cart = [];
+
+                // Store the updated cart back in local storage
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+
                 cartSizeElement.textContent = cart.length;
 
                 const cartList = document.getElementById('my-table');
