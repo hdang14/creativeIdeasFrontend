@@ -19,7 +19,51 @@
                 cartSizeElement.textContent = cart.length;
             }
         </script>
+        <script>
+            async function addItem(){
+
+                const itemName = document.getElementById("item_name").value;
+                const itemDesc = document.getElementById("item_description").value;
+                const itemPrice = document.getElementById("item_price").value;
+
+                const request = {
+                    name: itemName,
+                    description: itemDesc,
+                    price: itemPrice,
+                    qty: 1,
+                };
+
+
+                const response = await fetch('http://localhost/CreativeIdeasBackend/InventoryApi/index.php/addItem', {
+                    method: 'POST',
+                    headers:{
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(request),
+
+                });
+
+                document.getElementById("item_name").value = "";
+                document.getElementById("item_description").value = "";
+                document.getElementById("item_price").value = "";
+
+                showSuccess();
+            }
+            function showSuccess() {
+                // Get the snackbar DIV
+                var x = document.getElementById("snackbar");
+
+                // Add the "show" class to DIV
+                x.className = "show";
+
+                // After 3 seconds, remove the show class from DIV
+                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+
+            }  
+        </script>
    <?php include("../Component/Navbar.php") ?>
+
+   <div id="snackbar">Added to store</div>
 
       <div class="center">
         <form class="addform">
@@ -36,7 +80,7 @@
                 <input type="number" step="0.01" id="item_price" name="item_price" required>
             </div>
             <div style="text-align: right;">
-                <button type="submit">Add Item</button>
+                <button type="button" onclick="addItem()">Add Item</button>
             </div>
         </form>
     </div>

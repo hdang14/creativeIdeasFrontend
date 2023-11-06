@@ -70,7 +70,7 @@ function buildTable(data){
                         <td class="col-size">QTY: </td>
                         <td class="col-size">${data[i].itemQTY}</td>
                         <td class="col-size"><label class="align-text">Price: </label></td>
-                        <td class="col-size"><p class="align-text">${parseFloat(data[i].itemPrice).toFixed(2)}</p></td>
+                        <td class="col-size"><p class="align-text">$ ${parseFloat(data[i].itemPrice).toFixed(2)}</p></td>
                     </tr>
                 </table>
                 <button onclick="removeOrder(${i})" class="Order">Remove</button></td>
